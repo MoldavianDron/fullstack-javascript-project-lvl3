@@ -39,7 +39,7 @@ export const convertAssetUrls = (html, sourceUrl, assetsDirName) => {
 
   elements.each((_i, el) => {
     const $el = cheerio.default(el);
-    log(`The element is ${$el}`)
+    log(`The element is ${$el}`);
     const urlAttrName = tagSrcMapping[el.tagName];
     const elSrc = $el.attr(urlAttrName);
     log(`working on tag ${el.tagName} with ${urlAttrName}="${elSrc}"`);
