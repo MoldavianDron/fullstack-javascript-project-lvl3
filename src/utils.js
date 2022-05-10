@@ -2,7 +2,7 @@ import axios from 'axios';
 import path from 'path';
 import Listr from 'listr';
 import debug from 'debug';
-import cheerio from 'cheerio';
+import cherio from 'cheerio';
 import { promises as fs } from 'fs';
 
 const log = debug('page-loader');
@@ -38,7 +38,8 @@ export const convertAssetUrls = (html, sourceUrl, assetsDirName) => {
   const assetUrls = [];
 
   elements.each((_i, el) => {
-    const $el = cheerio(el);
+    const $el = cheerio.default(el);
+    log(`The element is ${$el}`)
     const urlAttrName = tagSrcMapping[el.tagName];
     const elSrc = $el.attr(urlAttrName);
     log(`working on tag ${el.tagName} with ${urlAttrName}="${elSrc}"`);
