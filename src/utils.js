@@ -2,7 +2,7 @@ import axios from 'axios';
 import path from 'path';
 import Listr from 'listr';
 import debug from 'debug';
-import cherio from 'cheerio';
+import cheerio from 'cheerio';
 import { promises as fs } from 'fs';
 
 const log = debug('page-loader');
